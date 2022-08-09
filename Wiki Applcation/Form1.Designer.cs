@@ -71,16 +71,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 12);
+            this.label1.Location = new System.Drawing.Point(25, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.label1.Text = "Search Box";
             // 
             // listBox
             // 
             this.listBox.FormattingEnabled = true;
-            this.listBox.Location = new System.Drawing.Point(373, 12);
+            this.listBox.Location = new System.Drawing.Point(308, 11);
             this.listBox.Name = "listBox";
             this.listBox.Size = new System.Drawing.Size(254, 355);
             this.listBox.TabIndex = 3;
@@ -137,7 +137,7 @@
             // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(207, 343);
+            this.loadButton.Location = new System.Drawing.Point(146, 344);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(75, 23);
             this.loadButton.TabIndex = 9;
@@ -146,7 +146,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(288, 344);
+            this.saveButton.Location = new System.Drawing.Point(227, 344);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 10;
@@ -230,7 +230,7 @@
             // 
             this.statusStrip.Location = new System.Drawing.Point(0, 369);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(639, 22);
+            this.statusStrip.Size = new System.Drawing.Size(570, 22);
             this.statusStrip.TabIndex = 20;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -238,7 +238,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 391);
+            this.ClientSize = new System.Drawing.Size(570, 391);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
