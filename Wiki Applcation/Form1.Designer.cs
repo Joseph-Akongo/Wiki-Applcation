@@ -31,7 +31,6 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.inputBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox = new System.Windows.Forms.ListBox();
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
@@ -48,7 +47,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusStrip = new System.Windows.Forms.ToolStripStatusLabel();
+            this.listBox = new System.Windows.Forms.ListView();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchButton
@@ -76,14 +78,6 @@
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Search Box";
-            // 
-            // listBox
-            // 
-            this.listBox.FormattingEnabled = true;
-            this.listBox.Location = new System.Drawing.Point(308, 11);
-            this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(254, 355);
-            this.listBox.TabIndex = 3;
             // 
             // addButton
             // 
@@ -143,6 +137,7 @@
             this.loadButton.TabIndex = 9;
             this.loadButton.Text = "Load";
             this.loadButton.UseVisualStyleBackColor = true;
+            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
             // 
             // saveButton
             // 
@@ -152,6 +147,7 @@
             this.saveButton.TabIndex = 10;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // button9
             // 
@@ -197,49 +193,67 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 16;
-            this.label2.Text = "label2";
+            this.label2.Text = "Name";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(36, 130);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 17;
-            this.label3.Text = "label3";
+            this.label3.Text = "Category";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(36, 159);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 18;
-            this.label4.Text = "label4";
+            this.label4.Text = "Structure";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(36, 191);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 19;
-            this.label5.Text = "label5";
+            this.label5.Text = "Definition";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusStrip});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 369);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(923, 22);
+            this.statusStrip1.TabIndex = 20;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // statusStrip
             // 
-            this.statusStrip.Location = new System.Drawing.Point(0, 369);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(570, 22);
-            this.statusStrip.TabIndex = 20;
-            this.statusStrip.Text = "statusStrip1";
+            this.statusStrip.Size = new System.Drawing.Size(908, 17);
+            this.statusStrip.Spring = true;
+            // 
+            // listBox
+            // 
+            this.listBox.HideSelection = false;
+            this.listBox.Location = new System.Drawing.Point(333, 12);
+            this.listBox.Name = "listBox";
+            this.listBox.Size = new System.Drawing.Size(578, 354);
+            this.listBox.TabIndex = 21;
+            this.listBox.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 391);
-            this.Controls.Add(this.statusStrip);
+            this.ClientSize = new System.Drawing.Size(923, 391);
+            this.Controls.Add(this.listBox);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -256,12 +270,13 @@
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.addButton);
-            this.Controls.Add(this.listBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.inputBox);
             this.Controls.Add(this.searchButton);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,7 +287,6 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox inputBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button deleteButton;
@@ -289,7 +303,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel statusStrip;
+        private System.Windows.Forms.ListView listBox;
     }
 }
 
